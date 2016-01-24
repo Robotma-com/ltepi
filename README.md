@@ -1,2 +1,2 @@
 # ltepi
-LTE Pi CLI
+LTEPi CLI
