@@ -5,6 +5,6 @@ Summary: LTEPi Library
 Home-page: http://www.inn-farm.co.jp/
 Author: Innovation Farm, Inc.
 Author-email: support@inn-farm.co.jp
-License: UNKNOWN
-Description: UNKNOWN
-Platform: UNKNOWN
+License: BSD 3
+Description: LTEPi CLI
+Platform: Raspbian
