@@ -31,7 +31,7 @@ $ curl https://raw.githubusercontent.com/Robotma-com/ltepi-setup/master/setup | 
 * 0.9.5
   - GitHub公開
   - License情報追加
-  - インストールスクリプトを追加
+  - インストールスクリプトとアンインストールスクリプトを追加
   - 0.9.4と実行コードは同一となっており、特に違いはありません
 
 * 0.9.4
