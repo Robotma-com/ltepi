@@ -14,6 +14,12 @@ Raspbian
 Raspberry Piをインターネットに接続できる状態にして実行してください。
 
 ```
+$ VERSION=1.0.1
+$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-setup/${VERSION}/setup | sudo bash
+```
+
+最新版を利用する場合は、以下のURLによりバージョンの指定を外すことができます。　
+```
 $ curl https://raw.githubusercontent.com/Robotma-com/ltepi-setup/master/setup | sudo bash
 ```
 
