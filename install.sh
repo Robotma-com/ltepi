@@ -23,5 +23,16 @@ function install {
   cp -f uninstall.sh ${RECORD}/ltepi-uninstall.sh
 }
 
+function package {
+  rm -f ltepi-${VERSION}.tgz
+  # http://unix.stackexchange.com/a/9865
+  COPYFILE_DISABLE=1 tar --exclude="./.*" -zcf ltepi-${VERSION}.tgz *
+}
+
+if [ "$1" == "pack" ]; then
+  package
+  exit 0
+fi
+
 assert_root
 install

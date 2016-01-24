@@ -65,3 +65,4 @@ ltepi-files.txt
 *-e
 PKG-INFO
 setup.py
+*.tgz
