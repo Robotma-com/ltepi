@@ -61,7 +61,7 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-files.txt
+ltepi-files.txt
 *-e
 PKG-INFO
 setup.py

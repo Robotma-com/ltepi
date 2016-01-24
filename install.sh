@@ -2,9 +2,9 @@
 
 VERSION=0.9.5
 
-RECORD="./files.txt"
+RECORD="./ltepi-files.txt"
 if [ -n "$1" ]; then
-  RECORD=$1
+  RECORD="$1/ltepi-files.txt"
 fi
 
 function assert_root {
@@ -20,6 +20,7 @@ function install {
   cp -f setup.py.txt setup.py
   sed -i -e "s/%VERSION%/${VERSION//\//\\/}/g" setup.py
   python ./setup.py install --record ${RECORD}
+  cp -f uninstall.sh ${RECORD}/ltepi-uninstall.sh
 }
 
 assert_root

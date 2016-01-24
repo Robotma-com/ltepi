@@ -1,8 +1,8 @@
 #!/bin/bash
 
-RECORD="./files.txt"
+RECORD="./ltepi-files.txt"
 if [ -n "$1" ]; then
-  RECORD=$1
+  RECORD="$1/ltepi-files.txt"
 fi
 
 function assert_root {
