@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(  name = 'ltepi',
-  version = '0.9.4',
+  version = '%VERSION%',
   description='LTEPi Library',
   author='Innovation Farm, Inc.',
   author_email='support@inn-farm.co.jp',
