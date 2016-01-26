@@ -37,7 +37,7 @@ $ ./install.sh pack
   - GitHub公開
   - License情報追加
   - インストールスクリプトとアンインストールスクリプトを追加
-  - 0.9.4と実行コードは同一となっており、特に違いはありません
+  - `getAntenna()`のtypo修正
 
 * 0.9.4
   - 初版、lte4iot.comにて公開
