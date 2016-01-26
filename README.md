@@ -10,17 +10,17 @@ RaspberryPi B+やRaspberryPi 2 Model Bに取り付けが可能なLTE通信モジ
 Raspbian
 
 # インストール方法
-[ltepi-setup](https://github.com/Robotma-com/ltepi-setup)とともにインストールする必要があります。以下のコマンドを入力すると、ltepi-setupとともにこのモジュールもインストールされます。
+[ltepi-service](https://github.com/Robotma-com/ltepi-service)とともにインストールする必要があります。以下のコマンドを入力すると、ltepi-serviceとともにこのモジュールもインストールされます。
 Raspberry Piをインターネットに接続できる状態にして実行してください。
 
 ```
-$ VERSION=1.0.1
-$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-setup/${VERSION}/setup | sudo bash
+$ VERSION=2.0.0
+$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/${VERSION}/install.sh | sudo bash
 ```
 
 最新版を利用する場合は、以下のようにバージョンの指定を外すことができます。
 ```
-$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-setup/master/setup | sudo bash
+$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/master/install.sh | sudo bash
 ```
 
 # モジュールリリース時の注意
