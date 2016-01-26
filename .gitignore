@@ -60,3 +60,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+ltepi-files.txt
+*-e
+PKG-INFO
+setup.py
+*.tgz
