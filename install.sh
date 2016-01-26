@@ -2,10 +2,12 @@
 
 VERSION=0.9.5
 
-RECORD="./ltepi-files.txt"
+PREFIX="."
+RECORD="ltepi-files.txt"
 if [ -n "$1" ]; then
-  RECORD="$1/ltepi-files.txt"
+  PREFIX="$1"
 fi
+RECORD="${PREFIX}/ltepi-files.txt"
 
 function assert_root {
   if [[ $EUID -ne 0 ]]; then
@@ -14,13 +16,22 @@ function assert_root {
   fi
 }
 
+function install_pyserial {
+  python -c "import serial"
+  if [ "$?" == "0" ]; then
+    return
+  fi
+  apt-get update -qq
+  apt-get install -y python-serial
+}
+
 function install {
   cp -f PKG-INFO.txt PKG-INFO
   sed -i -e "s/%VERSION%/${VERSION//\//\\/}/g" PKG-INFO
   cp -f setup.py.txt setup.py
   sed -i -e "s/%VERSION%/${VERSION//\//\\/}/g" setup.py
   python ./setup.py install --record ${RECORD}
-  cp -f uninstall.sh ${RECORD}/ltepi-uninstall.sh
+  cp -f uninstall.sh ${PREFIX}/ltepi-uninstall.sh
 }
 
 function package {
@@ -35,4 +46,5 @@ if [ "$1" == "pack" ]; then
 fi
 
 assert_root
+install_pyserial
 install
