@@ -126,16 +126,17 @@ def setGpsid(id):
 def setGpspass(p,mode):
 	return moduleCall("at@75="+p+","+mode, "OK", 2, 1.0)
 	
-def reqConnect(apn,id,p):
-	ret= moduleCall("at$52=2", "OK", 2, 1.0)
-	if ret != "OK":
-		return ret
-	ret= moduleCall("at+aapn="+apn, "OK", 2, 1.0)
-	if ret != "OK":
-		return ret
-	ret= moduleCall("at+ccallid="+id+","+p+",1,0", "OK", 2, 1.0)
-	if ret != "OK":
-		return ret
+def reqConnect(apn=None,id=None,p=None):
+	if apn and id and p:
+		ret= moduleCall("at$52=2", "OK", 2, 1.0)
+		if ret != "OK":
+			return ret
+		ret= moduleCall("at+aapn="+apn, "OK", 2, 1.0)
+		if ret != "OK":
+			return ret
+		ret= moduleCall("at+ccallid="+id+","+p+",1,0", "OK", 2, 1.0)
+		if ret != "OK":
+			return ret
 	ret= moduleCall("at+ccall=1", "OK", 2, 5.0)
 	if ret != "OK":
 		return ret
