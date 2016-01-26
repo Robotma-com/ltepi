@@ -90,8 +90,12 @@ def getIccid():
 def getArea():
 	return moduleCall("at+cad?", "OK", 1, 1.0)
 	
-def getAntena():
+def getAntenna():
 	return moduleCall("at$30=0", "OK", 1, 1.0)
+
+def getAntena():
+  print('[deprecated] use getAntenna() instead')
+  return getAntenna()
 	
 def getGpsid():
 	return moduleCall("at@74?", "OK", 1, 1.0)
