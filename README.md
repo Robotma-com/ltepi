@@ -1,4 +1,8 @@
 # ltepi
+
+[![GitHub release](https://img.shields.io/github/release/Robotma-com/ltepi.svg)](https://github.com/Robotma-com/ltepi/releases/latest)
+[![License BSD3](https://img.shields.io/github/license/Robotma-com/ltepi.svg)](http://opensource.org/licenses/BSD-3-Clause)
+
 LTEPiを利用するためのPythonライブラリです。
 
 # LTEPiって何？
@@ -18,13 +22,13 @@ Raspbian 4.1以降
 Raspberry Piをインターネットに接続できる状態にして実行してください。
 
 ```
-$ VERSION=2.0.0
-$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/${VERSION}/install.sh | sudo bash
+$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/master/install.sh | sudo bash
 ```
 
-最新版を利用する場合は、以下のようにバージョンの指定を外すことができます。
+特定のバージョンを利用する場合は、以下のようにバージョンを指定することができます。
 ```
-$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/master/install.sh | sudo bash
+$ VERSION=2.0.0
+$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/${VERSION}/install.sh | sudo bash
 ```
 
 # アンインストール
