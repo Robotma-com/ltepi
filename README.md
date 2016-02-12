@@ -1,4 +1,8 @@
 # ltepi
+
+[![GitHub release](https://img.shields.io/github/release/Robotma-com/ltepi.svg)](https://github.com/Robotma-com/ltepi/releases/latest)
+[![License BSD3](https://img.shields.io/github/license/Robotma-com/ltepi.svg)](http://opensource.org/licenses/BSD-3-Clause)
+
 LTEPiを利用するためのPythonライブラリです。
 
 # LTEPiって何？
@@ -14,26 +18,12 @@ RaspberryPi B+やRaspberryPi 2 Model Bに取り付けが可能なLTE通信モジ
 Raspbian 4.1以降
 
 # インストール方法
-[ltepi-service](https://github.com/Robotma-com/ltepi-service)とともにインストールする必要があります。以下のコマンドを入力すると、ltepi-serviceとともにこのモジュールもインストールされます。
-Raspberry Piをインターネットに接続できる状態にして実行してください。
 
-```
-$ VERSION=2.0.0
-$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/${VERSION}/install.sh | sudo bash
-```
+[ltepi-serviceのインストール方法](https://github.com/Robotma-com/ltepi-service#インストール方法)に従ってインストールを行ってください。その際に本モジュールも同時にインストールされます。
 
-最新版を利用する場合は、以下のようにバージョンの指定を外すことができます。
-```
-$ curl https://raw.githubusercontent.com/Robotma-com/ltepi-service/master/install.sh | sudo bash
-```
+# アンインストール方法
 
-# アンインストール
-[ltepi-service](https://github.com/Robotma-com/ltepi-service)とともにアンインストールします。
-ホームディレクトリーに移りアンインストールのスクリプトを実施してください。
-```
-$ cd ~
-$ sudo /opt/inn-farm/ltepi/bin/uninstall.sh
-```
+[ltepi-serviceのアンインストール方法](https://github.com/Robotma-com/ltepi-service#アンインストール方法)に従ってアンインストールを行ってください。その際に本モジュールも同時にアンインストールされます。
 
 # Pythonライブラリーの利用
 ltepiをimportしてください。
