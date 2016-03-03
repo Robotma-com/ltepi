@@ -17,6 +17,10 @@ RaspberryPi B+やRaspberryPi 2 Model Bに取り付けが可能なLTE通信モジ
 # 対応OS
 Raspbian 4.1以降
 
+# バージョンアップ方法
+
+[ltepi-serviceのバージョンアップ方法](https://github.com/Robotma-com/ltepi-service#バージョンアップ方法)に記載の方法でバージョンアップを行ってください。
+
 # インストール方法
 
 [ltepi-serviceのインストール方法](https://github.com/Robotma-com/ltepi-service#インストール方法)に従ってインストールを行ってください。その際に本モジュールも同時にインストールされます。
@@ -40,6 +44,18 @@ telno = ltepi.getTelno()
 ```
 $ ./install.sh pack
 ```
+
+# モジュール確認時の注意
+```
+$ VERSION=このプロジェクトのバージョン
+$ LTEPI_SERVICE_VERSION=ltepi-serviceのバージョン
+$ cd /tmp
+$ mkdir ltepi-${VERSION}; cd ltepi-${VERSION}; tar zxf ~/ltepi-${VERSION}.tgz; cd /tmp
+$ mkdir ltepi-service-${LTEPI_SERVICE_VERSION}; cd ltepi-service-${LTEPI_SERVICE_VERSION}
+$ tar zxf ~/ltepi-service-${LTEPI_SERVICE_VERSION}.tgz
+$ sudo CANDY_RED=0 SRC_DIR=$(pwd) DEBUG=1 ./install.sh
+```
+
 
 # 履歴
 * 0.10.0
