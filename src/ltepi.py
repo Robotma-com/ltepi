@@ -7,11 +7,18 @@ import time
 import warnings
 
 def moduleCall(command, exString, row, timeout):
-	try:
-		port = serial.Serial("/dev/ttyACM0", baudrate=115200, timeout=1)
-	except:
-		return "SERIAL_ERROR" 
-	start= time.time()	
+	port = None
+	for i in range(0, 9):
+		try:
+			port = serial.Serial("/dev/ttyACM%i" % i, baudrate=115200, timeout=1)
+			break
+		except:
+			pass
+
+	if port is None:
+		return "SERIAL_ERROR"
+
+	start= time.time()
 
 	at = command
 
