@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.9.5
+VERSION=0.10.0
 
 PREFIX="."
 RECORD="ltepi-files.txt"
