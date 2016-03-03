@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.9.5
+VERSION=0.10.0
 
 PREFIX="."
 RECORD="ltepi-files.txt"
@@ -35,7 +35,7 @@ function install {
 }
 
 function package {
-  rm -f ltepi-${VERSION}.tgz
+  rm -f ltepi-*.tgz
   # http://unix.stackexchange.com/a/9865
   COPYFILE_DISABLE=1 tar --exclude="./.*" -zcf ltepi-${VERSION}.tgz *
 }

@@ -7,11 +7,18 @@ import time
 import warnings
 
 def moduleCall(command, exString, row, timeout):
-	try:
-		port = serial.Serial("/dev/ttyACM0", baudrate=115200, timeout=1)
-	except:
-		return "SERIAL_ERROR" 
-	start= time.time()	
+	port = None
+	for i in range(0, 9):
+		try:
+			port = serial.Serial("/dev/ttyACM%i" % i, baudrate=115200, timeout=1)
+			break
+		except:
+			pass
+
+	if port is None:
+		return "SERIAL_ERROR"
+
+	start= time.time()
 
 	at = command
 
@@ -102,7 +109,10 @@ def getGpsid():
 
 def getGpspass():
 	return moduleCall("at@75?", "OK", 1, 1.0)
-	
+
+def getSimSelected():
+	return moduleCall("at$18?", "OK", 1, 1.0)
+
 def setIpaddress(ip):
 	if False == ip.startswith("192.168.225."):
 		return "ERROR"
@@ -119,7 +129,10 @@ def setDmzip(ip):
 
 def setSelectsim():
 	return moduleCall("at$18=2", "OK", 2, 1.0)
-	
+
+def unsetSelectsim():
+	return moduleCall("at$18=1", "OK", 2, 1.0)
+
 def setGpsid(id):
 	return moduleCall("at@74="+id, "OK", 2, 1.0)
 
