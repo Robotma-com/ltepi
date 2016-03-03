@@ -42,7 +42,7 @@ def moduleCall(command, exString, row, timeout):
 			else:
 				data = data+tmp
 
-		
+
 		if flag == 1:
 			if cnt == row:
 				result = data
@@ -77,26 +77,26 @@ def getDatetime():
 
 def getPacketstat():
 	return moduleCall("at$36?", "OK", 1, 1.0)
-	
+
 def getSimstat():
 	return moduleCall("at$20?", "OK", 1, 1.0)
-	
+
 def getTelno():
 	return moduleCall("at$21?", "OK", 1, 1.0)
 
 def getIccid():
 	return moduleCall("at$19?", "OK", 1, 1.0)
-	
+
 def getArea():
 	return moduleCall("at+cad?", "OK", 1, 1.0)
-	
+
 def getAntenna():
 	return moduleCall("at$30=0", "OK", 1, 1.0)
 
 def getAntena():
   print('[deprecated] use getAntenna() instead')
   return getAntenna()
-	
+
 def getGpsid():
 	return moduleCall("at@74?", "OK", 1, 1.0)
 
@@ -113,19 +113,19 @@ def setIpaddress(ip):
 	commands.getoutput("route add -net 0.0.0.0 gw 192.168.225.1 netmask 0.0.0.0 usb0")
 	commands.getoutput("route del -net 0.0.0.0 eth0")
 	return "OK"
-	
+
 def setDmzip(ip):
 	return moduleCall("at+dmzip="+ip, "OK", 2, 1.0)
-	
+
 def setSelectsim():
 	return moduleCall("at$18=2", "OK", 2, 1.0)
 	
 def setGpsid(id):
 	return moduleCall("at@74="+id, "OK", 2, 1.0)
-	
+
 def setGpspass(p,mode):
 	return moduleCall("at@75="+p+","+mode, "OK", 2, 1.0)
-	
+
 def reqConnect(apn=None,id=None,p=None):
 	if apn and id and p:
 		ret= moduleCall("at$52=2", "OK", 2, 1.0)
@@ -141,13 +141,13 @@ def reqConnect(apn=None,id=None,p=None):
 	if ret != "OK":
 		return ret
 	return "OK"
-	
+
 def reqDisconnect():
 	return moduleCall("at+ccall=0", "OK", 2, 5.0)
-	
+
 def reqOta():
 	return moduleCall("at@30", "OK", 2, 0.5)
-	
+
 def reqGpsStart(id,p,timeout):
 	ret= moduleCall("at@74="+id, "OK", 2, 1.0)
 	if ret != "OK":
@@ -159,20 +159,20 @@ def reqGpsStart(id,p,timeout):
 	if ret != "OK":
 		return ret
 	return moduleCall("", "GPSOK", 1, timeout)
-	
+
 def reqGpsStop():
 	return moduleCall("at@73", "OK", 2, 1.0)
 
 def reqInit():
 	return moduleCall("at&f0", "OK", 2, 2.0)
-	
+
 def reqWrite():
 	return moduleCall("at&w0", "OK", 2, 1.0)
-	
+
 def reqVbusOn():
 	#commands.getoutput("echo 5 > /sys/class/gpio/export")
 	#commands.getoutput("echo out > /sys/class/gpio/gpio5/direction")
-	commands.getoutput("echo 1 > /sys/class/gpio/gpio5/value")	
+	commands.getoutput("echo 1 > /sys/class/gpio/gpio5/value")
 	return "OK"
 
 def reqVbusOff():
@@ -187,7 +187,7 @@ def reqPowerOn():
 	time.sleep(2.2)
 	commands.getoutput("echo 0 > /sys/class/gpio/gpio12/value")
 	return "OK"
-	
+
 def reqPowerOff():
 	commands.getoutput("echo 0 > /sys/class/gpio/gpio12/value")
         commands.getoutput("echo 1 > /sys/class/gpio/gpio12/value")
