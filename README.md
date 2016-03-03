@@ -42,6 +42,11 @@ $ ./install.sh pack
 ```
 
 # 履歴
+* 0.10.0
+  - 以下のAPIを追加
+    - `unsetSelectsim()` ... SIM優先モードを解除する
+    - `getSimSelected()` ... SIM優先モードかどうかを返す
+
 * 0.9.5
   - GitHub公開
   - License情報追加
